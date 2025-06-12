@@ -16,14 +16,46 @@
             width: 100%;
             height: 100%;
         }
+        .play-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .play-button:hover {
+            transform: scale(1.05);
+            background-color: #ff1493;
+        }
+        #backgroundMusic {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.4/build/spline-viewer.js"></script>
-    <spline-viewer url="https://prod.spline.design/5-AlCj24-E5CvH6A/scene.splinecode"></spline-viewer>
+    <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/5-AlCj24-E5CvH6A/scene.splinecode"></spline-viewer>
+    <audio id="backgroundMusic" loop>
+        <source src="https://res.cloudinary.com/do9m2khzs/video/upload/v1749697789/Happy_Birthday_Beautiful_-_Pentatonix_zlu8id.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button class="play-button" onclick="playMusic()">Click Me!🎵</button>
+    <script>
+        function playMusic() {
+            const audio = document.getElementById('backgroundMusic');
+            audio.volume = 0.5;
+            audio.play();
+            const button = document.querySelector('.play-button');
+            button.style.display = 'none';
+        }
+    </script>
 </body>
-    <audio controls autoplay>
-    <source src="https://res.cloudinary.com/do9m2khzs/video/upload/v1749697789/Happy_Birthday_Beautiful_-_Pentatonix_zlu8id.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
 </html> 
