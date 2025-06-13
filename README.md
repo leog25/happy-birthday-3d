@@ -8,4 +8,4 @@ using spline and community
 
 
 
-[site]([https://hbd-sigma-seven.vercel.app/]). 
+[site](https://hbd-sigma-seven.vercel.app/). 
